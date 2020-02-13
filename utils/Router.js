@@ -1,9 +1,11 @@
 import { objParseUrlAndParam } from './Validate'
+import routerLink from '../components/router-link'
 
 class Router {
   constructor({
       routes
   }) {
+    Router.$root = this;
     this.routes = routes
     this.callBack = () => {};
   }
@@ -56,6 +58,18 @@ class Router {
       })
     });
   }
+}
+
+Router.install = function (Vue) {
+
+  Vue.component('RouterLink', routerLink)
+
+  Object.defineProperty(Vue.prototype, "$router", {
+    get: function () {
+      return Router.$root;
+    }
+  });
+
 }
 
 export default Router;

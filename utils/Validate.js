@@ -29,3 +29,21 @@ export function objParseUrlAndParam(path, obj) {
   url += paramsStr;
   return url;
 }
+
+/**
+ * @description get url string parameters
+ * @param locationhref
+ * @returns {Object}
+ */
+export function getRequestParameters(locationhref) {
+  let href = locationhref || "";
+  let theRequest = new Object();
+  let str = href.split("?")[1];
+  if (str != undefined) {
+    let strs = str.split("&");
+    for (let i = 0; i < strs.length; i++) {
+      theRequest[strs[i].split("=")[0]] = (strs[i].split("=")[1]);
+    }
+  }
+  return theRequest;
+}
