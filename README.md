@@ -3,10 +3,10 @@
 
 ## introduce
 
-uni-router-mini is mainly designed for uni app without route interception function, conform to [Vue-router](https://router.vuejs.org/zh/) usage habits。
+uni-router-mini is specially designed for uni-app, which mainly solves the problem of uni-app route interception。
 
 ## use
-___router.js needs to be consistent with pages.json___
+___routes.js needs to be consistent with the path of pages.json___
 * router/routes.js 
 
     ```
