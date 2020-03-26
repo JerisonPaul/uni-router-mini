@@ -72,7 +72,18 @@ ___routes.js needs to be consistent with the path of pages.json___
       this.$router.reLaunch({ path : '', query: { a:1 } }) Amount to uni.reLaunch()
       
       this.$router.back({ path : '', query: { a:1 } }) Amount to uni.navigateBack()
+      
     ```
+   * Receiving parameters
+   
+  ```
+    onLoad(options) {
+        const query = options.query
+        const a = query.a         
+    }
+     
+  ```
+         
     
                                                                                    
 
