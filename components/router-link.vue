@@ -22,7 +22,7 @@
       gotoPage() {
         if(!this.to){
           console.error("Wrong routing information:" + JSON.stringify(this.to))
-          return
+          return;
         }
         const path = this.to.split('?')[0]
         const query = getRequestParameters(this.to)
