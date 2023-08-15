@@ -1,26 +1,25 @@
 # uni-router-mini
-> A simple [Vue-router](https://router.vuejs.org/zh/)，tailored for [uni-app](https://uniapp.dcloud.io/)
+> 简易版 [Vue-router](https://router.vuejs.org/zh/) 专门为 [uni-app](https://uniapp.dcloud.io/) 服务
 
-## introduce
+## 介绍
 
-uni-router-mini is specially designed for uni-app, which mainly solves the problem of uni-app route interception。
+uni-router-mini 专为 uni-app 设计,  主要解决 uni-app 没有路由拦截问题。
 
-## use
-___routes.js needs to be consistent with the path of pages.json___
+## 使用
+___routes.js需要与pages.json配置的路径一致___
 * router/routes.js 
 
     ```
      /**
        * @description param intro
-       * @param path       must fill needs to be consistent with the path of pages.json.
-       * @param name       Not required, it depends on your needs.
-       * @param meta       Can put the parameters you need，
-       *                   such as 'requireAuth', Used as a condition for whether to intercept
+       * @param path       必须填充需要与pages.json的路径一致.
+       * @param name       不必填，这取决于您的需求.
+       * @param meta       可以放入您需要的参数，如“requireAuth”，用作是否拦截的条件
        */
        
      const routes = [
         {
-          path: '/pages/index/index',  // Must fill   
+          path: '/pages/index/index',  // 必填   
           name: 'index',
           meta: {
             title: 'index',
@@ -36,8 +35,8 @@ ___routes.js needs to be consistent with the path of pages.json___
       /**
       * @description router
       * beforeEach 
-      *      to: Upcoming destination route object
-      *      next: The execution effect depends on the call parameters of the next method
+      *      to: 目标路有对象
+      *      next: 是否执行下一步的调用函数，类似vue-router
       */
       
       import _routes from './router/routes'
@@ -60,18 +59,18 @@ ___routes.js needs to be consistent with the path of pages.json___
       Vue.prototype.$router = router
     ```    
    
-* pages use
+* 页面使用
 
    ```
-      this.$router.push({ path : '', query: { a:1 } }) Amount to uni.navigateTo()
+      this.$router.push({ path : '', query: { a:1 } }) 等价于 uni.navigateTo()
       
-      this.$router.redirectTo({ path : '', query: { a:1 } }) Amount to uni.redirectTo()
+      this.$router.redirectTo({ path : '', query: { a:1 } }) 等价于 uni.redirectTo()
       
-      this.$router.switchTab({ path : '', query: { a:1 } }) Amount to uni.switchTab()
+      this.$router.switchTab({ path : '', query: { a:1 } }) 等价于 uni.switchTab()
       
-      this.$router.reLaunch({ path : '', query: { a:1 } }) Amount to uni.reLaunch()
+      this.$router.reLaunch({ path : '', query: { a:1 } }) 等价于 uni.reLaunch()
       
-      this.$router.back({ path : '', query: { a:1 } }) Amount to uni.navigateBack()
+      this.$router.back({ path : '', query: { a:1 } }) 等价于 uni.navigateBack()
       
     ```
    * Receiving parameters
