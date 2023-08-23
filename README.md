@@ -5,6 +5,11 @@
 
 uni-router-mini 专为 uni-app 设计,  主要解决 uni-app 没有路由拦截问题。
 
+## 安装
+```shell
+npm install uni-router-mini
+```
+
 ## 使用
 ___routes.js需要与pages.json配置的路径一致___
 * router/routes.js 
@@ -73,8 +78,8 @@ ___routes.js需要与pages.json配置的路径一致___
       this.$router.back({ path : '', query: { a:1 } }) 等价于 uni.navigateBack()
       
     ```
-   * Receiving parameters
-   
+ * 接收参数
+
   ```
     onLoad(options) {
         const query = options.query

@@ -5,6 +5,11 @@
 
 uni-router-mini is specially designed for uni-app, which mainly solves the problem of uni-app route interception。
 
+## install
+```shell
+npm install uni-router-mini
+```
+
 ## use
 ___routes.js needs to be consistent with the path of pages.json___
 * router/routes.js 
@@ -74,7 +79,7 @@ ___routes.js needs to be consistent with the path of pages.json___
       this.$router.back({ path : '', query: { a:1 } }) Amount to uni.navigateBack()
       
     ```
-   * Receiving parameters
+ * Receiving parameters
    
   ```
     onLoad(options) {
